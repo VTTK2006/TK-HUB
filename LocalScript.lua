@@ -31,7 +31,7 @@ MainUICorner.Parent = MainMenu
 -- 3. TẠO SIDEBAR (THANH MENU BÊN TRÁI)
 local Sidebar = Instance.new("Frame")
 Sidebar.Name = "Sidebar"
-Sidebar.Size = UDim2.new(0, 150, 1, 0)
+Sidebar.Size = UDim2.new(0, 170, 1, 0)
 Sidebar.BackgroundColor3 = Color3.fromRGB(10, 10, 15) -- Màu tối hơn
 Sidebar.BorderSizePixel = 0
 Sidebar.Parent = MainMenu
