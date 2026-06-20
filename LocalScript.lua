@@ -55,7 +55,7 @@ LogoImage.Name = "LogoImage"
 LogoImage.Size = UDim2.new(0, 100, 0, 100)
 LogoImage.Position = UDim2.new(0.5, -50, 0, 20)
 LogoImage.BackgroundTransparency = 1
-LogoImage.Image = "rbxassetid://16127113101" -- Thay bằng ID ảnh Logo của bạn
+LogoImage.Image = "rbxassetid://88008118843799" -- Thay bằng ID ảnh Logo của bạn
 LogoImage.ScaleType = Enum.ScaleType.Fit
 LogoImage.Parent = Sidebar
 
