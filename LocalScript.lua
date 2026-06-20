@@ -194,6 +194,62 @@ spawn(function()
     end
 end)
 
+-- Tạo nút "Mở lại menu" (OpenButton)
+local OpenButton = Instance.new("ImageButton")
+OpenButton.Name = "OpenButton"
+OpenButton.Size = UDim2.new(0, 50, 0, 50)
+OpenButton.Position = UDim2.new(0, 10, 0, 10) -- Góc trên bên trái
+OpenButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+OpenButton.Image = "rbxassetid://ID_ẢNH_LOGO_CỦA_BẠN" -- Dùng ảnh logo nhỏ của bạn
+OpenButton.Visible = false -- Mặc định là ẩn
+OpenButton.Parent = TKHub_ScreenGui
+
+-- Bo tròn nút mở lại
+local OpenUICorner = Instance.new("UICorner")
+OpenUICorner.CornerRadius = UDim.new(1, 0)
+OpenUICorner.Parent = OpenButton
+-- ==========================================
+-- XỬ LÝ SỰ KIỆN NÚT ĐÓNG & THU NHỎ
+-- ==========================================
+
+-- Nút Đóng (X)
+local CloseButton = Instance.new("TextButton")
+CloseButton.Name = "CloseButton"
+CloseButton.Size = UDim2.new(0, 30, 0, 30)
+CloseButton.Position = UDim2.new(1, -35, 0, 5)
+CloseButton.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+CloseButton.Text = "X"
+CloseButton.TextColor3 = Color3.new(1, 1, 1)
+CloseButton.Parent = MainMenu
+
+CloseButton.MouseButton1Click:Connect(function()
+    TKHub_ScreenGui:Destroy() -- Xóa hoàn toàn menu khỏi màn hình
+end)
+
+-- Nút Thu Nhỏ (-)
+local MinimizeButton = Instance.new("TextButton")
+MinimizeButton.Name = "MinimizeButton"
+MinimizeButton.Size = UDim2.new(0, 30, 0, 30)
+MinimizeButton.Position = UDim2.new(1, -70, 0, 5)
+MinimizeButton.BackgroundColor3 = Color3.fromRGB(80, 200, 255)
+MinimizeButton.Text = "-"
+MinimizeButton.TextColor3 = Color3.new(1, 1, 1)
+MinimizeButton.Parent = MainMenu
+
+local isMinimized = false
+MinimizeButton.MouseButton1Click:Connect(function()
+    isMinimized = not isMinimized
+    if isMinimized then
+        MainMenu.Size = UDim2.new(0, 600, 0, 40) -- Chỉ hiện thanh tiêu đề
+        Content.Visible = false
+        Sidebar.Visible = false
+    else
+        MainMenu.Size = UDim2.new(0, 600, 0, 400) -- Hiện lại đầy đủ
+        Content.Visible = true
+        Sidebar.Visible = true
+    end
+end)
+
 -- ==========================================
 -- TẠO CÁC NÚT BẤM (BUTTONS) TRÊN SIDEBAR
 -- ==========================================
