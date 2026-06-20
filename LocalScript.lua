@@ -258,7 +258,7 @@ end)
 local ButtonContainer = Instance.new("Frame")
 ButtonContainer.Name = "ButtonContainer"
 -- Size.Y là 1, -160 (đủ chỗ cho phần Logo phía trên)
-ButtonContainer.Size = UDim2.new(1, 0, 1, -160) 
+ButtonContainer.Size = UDim2.new(1, 0, 1, -130) 
 ButtonContainer.Position = UDim2.new(0, 0, 0, 160)
 ButtonContainer.BackgroundTransparency = 1
 ButtonContainer.Parent = Sidebar
