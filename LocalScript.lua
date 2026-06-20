@@ -254,16 +254,19 @@ end)
 -- TẠO CÁC NÚT BẤM (BUTTONS) TRÊN SIDEBAR
 -- ==========================================
 
+-- Thay đổi Size và Position của container để rộng rãi hơn
 local ButtonContainer = Instance.new("Frame")
 ButtonContainer.Name = "ButtonContainer"
-ButtonContainer.Size = UDim2.new(1, 0, 1, -160)
+-- Size.Y là 1, -160 (đủ chỗ cho phần Logo phía trên)
+ButtonContainer.Size = UDim2.new(1, 0, 1, -160) 
 ButtonContainer.Position = UDim2.new(0, 0, 0, 160)
 ButtonContainer.BackgroundTransparency = 1
 ButtonContainer.Parent = Sidebar
 
 local UIListLayout = Instance.new("UIListLayout")
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 10)
+UIListLayout.Padding = UDim.new(0, 10) -- Khoảng cách giữa các nút
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center -- Căn giữa nút trong sidebar
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Top -- Bắt đầu từ trên xuống
 UIListLayout.Parent = ButtonContainer
 
 local function createSidebarButton(name, layoutOrder)
